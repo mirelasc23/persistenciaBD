@@ -5,6 +5,12 @@
  */
 package robervalPSI.view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Info
@@ -16,7 +22,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
+
+    public JButton buttonFiltrar() {
+        return jButtonFiltrar;
+    }
+
+    public JComboBox<String> comboBoxFiltrarPor() {
+        return jComboBoxFiltrarPor;
+    }
+
+    public JScrollPane scrollPaneDados() {
+        return jScrollPaneDados;
+    }
+
+    public JTable tableDados() {
+        return jTableDados;
+    }
+
+    public JTextField textFieldValor() {
+        return jTextFieldValor;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,17 +56,83 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextFieldValor = new javax.swing.JTextField();
+        jComboBoxFiltrarPor = new javax.swing.JComboBox<>();
+        jButtonFiltrar = new javax.swing.JButton();
+        jLabelValor = new javax.swing.JLabel();
+        jLabelFiltrarPor = new javax.swing.JLabel();
+        jSeparatorFiltro = new javax.swing.JSeparator();
+        jScrollPaneDados = new javax.swing.JScrollPane();
+        jTableDados = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jComboBoxFiltrarPor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Id", "Nome ", "CPF" }));
+        jComboBoxFiltrarPor.setSelectedIndex(-1);
+
+        jButtonFiltrar.setText("Filtrar");
+
+        jLabelValor.setText("Valor");
+
+        jLabelFiltrarPor.setText("Filtrar Por");
+
+        jTableDados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "NOME", "CPF"
+            }
+        ));
+        jScrollPaneDados.setViewportView(jTableDados);
+        if (jTableDados.getColumnModel().getColumnCount() > 0) {
+            jTableDados.getColumnModel().getColumn(0).setMinWidth(100);
+            jTableDados.getColumnModel().getColumn(0).setPreferredWidth(100);
+            jTableDados.getColumnModel().getColumn(0).setMaxWidth(100);
+            jTableDados.getColumnModel().getColumn(2).setMinWidth(250);
+            jTableDados.getColumnModel().getColumn(2).setPreferredWidth(250);
+            jTableDados.getColumnModel().getColumn(2).setMaxWidth(250);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPaneDados)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelFiltrarPor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelValor)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonFiltrar))))
+                    .addComponent(jSeparatorFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelValor)
+                    .addComponent(jLabelFiltrarPor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxFiltrarPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonFiltrar))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparatorFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneDados, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +174,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonFiltrar;
+    private javax.swing.JComboBox<String> jComboBoxFiltrarPor;
+    private javax.swing.JLabel jLabelFiltrarPor;
+    private javax.swing.JLabel jLabelValor;
+    private javax.swing.JScrollPane jScrollPaneDados;
+    private javax.swing.JSeparator jSeparatorFiltro;
+    private javax.swing.JTable jTableDados;
+    private javax.swing.JTextField jTextFieldValor;
     // End of variables declaration//GEN-END:variables
 }
