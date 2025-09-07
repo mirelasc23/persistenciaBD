@@ -7,7 +7,6 @@ package robervalPSI.view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -31,10 +30,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     public JComboBox<String> comboBoxFiltrarPor() {
         return jComboBoxFiltrarPor;
-    }
-
-    public JScrollPane scrollPaneDados() {
-        return jScrollPaneDados;
     }
 
     public JTable tableDados() {
