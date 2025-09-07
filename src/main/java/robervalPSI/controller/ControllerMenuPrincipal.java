@@ -19,6 +19,15 @@ public class ControllerMenuPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent evento) {
         if(evento.getSource() == this.menuPrincipal.buttonFiltrar()){
             JOptionPane.showMessageDialog(null, "Botão Filtrar");
+            if(this.menuPrincipal.textFieldValor().getText().trim().equalsIgnoreCase("")){
+                JOptionPane.showMessageDialog(null, "A busca não retornou nada");
+            }else if(this.menuPrincipal.comboBoxFiltrarPor().getSelectedIndex() == 0){
+                JOptionPane.showMessageDialog(null, "Filtrar por id.");
+            }else if(this.menuPrincipal.comboBoxFiltrarPor().getSelectedIndex() == 1){
+                JOptionPane.showMessageDialog(null, "Filtrar por nome.");
+            }else if(this.menuPrincipal.comboBoxFiltrarPor().getSelectedIndex() == 2){
+                JOptionPane.showMessageDialog(null, "Filtrar por cpf.");
+            }
         }
     }
     
