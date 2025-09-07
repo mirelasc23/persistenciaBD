@@ -5,6 +5,12 @@
  */
 package robervalPSI.view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import robervalPSI.controller.ControllerMenuPrincipal;
+
 
 /**
  *
@@ -20,6 +26,23 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
         initComponents();
     }
 
+    public JButton jButtonFiltrar() {
+        return jButtonFiltrar;
+    }
+
+    public JComboBox<String> jComboBoxFiltrarPor() {
+        return jComboBoxFiltrarPor;
+    }
+
+    public JTable jTableDados() {
+        return jTableDados;
+    }
+
+    public JTextField jTextFieldValor() {
+        return jTextFieldValor;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,8 +58,8 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
         jTextFieldValor = new javax.swing.JTextField();
         jButtonFiltrar = new javax.swing.JButton();
         jSeparatorBusca = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPaneDados = new javax.swing.JScrollPane();
+        jTableDados = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -54,7 +77,7 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null}
             },
@@ -62,11 +85,11 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
                 "Id", "Nome", "CPF"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(100);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(100);
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(100);
+        jScrollPaneDados.setViewportView(jTableDados);
+        if (jTableDados.getColumnModel().getColumnCount() > 0) {
+            jTableDados.getColumnModel().getColumn(0).setMinWidth(100);
+            jTableDados.getColumnModel().getColumn(0).setPreferredWidth(100);
+            jTableDados.getColumnModel().getColumn(0).setMaxWidth(100);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,7 +116,7 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
                 .addComponent(jSeparatorBusca))
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 861, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPaneDados, javax.swing.GroupLayout.PREFERRED_SIZE, 861, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -111,7 +134,7 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
                 .addGap(34, 34, 34)
                 .addComponent(jSeparatorBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPaneDados, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
 
@@ -153,6 +176,7 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MenuPrincipal2 dialog = new MenuPrincipal2(new javax.swing.JFrame(), true);
+                new ControllerMenuPrincipal(dialog);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -169,9 +193,9 @@ public class MenuPrincipal2 extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> jComboBoxFiltrarPor;
     private javax.swing.JLabel jLabelFiltrarPor;
     private javax.swing.JLabel jLabelValor;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneDados;
     private javax.swing.JSeparator jSeparatorBusca;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableDados;
     private javax.swing.JTextField jTextFieldValor;
     // End of variables declaration//GEN-END:variables
 }
