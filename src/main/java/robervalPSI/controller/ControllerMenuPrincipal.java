@@ -22,8 +22,5 @@ public class ControllerMenuPrincipal implements ActionListener{
         }
     }
     
-    public void tst(){
-        
-    }
     
 }
