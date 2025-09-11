@@ -7,8 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class ConnectionFactoty {
-    public static final String driver = "com.mysql.jdbc.Driver";
-    public static final String banco = "jdbc:mysql://localhost:3306/hotel";
+    public static final String driver = "org.postgresql.Driver";
+    public static final String banco = "jdbc:postgresql://localhost:5432/hotel";
     public static final String usuario = "root";
     public static final String senha = "ifsc";
     
