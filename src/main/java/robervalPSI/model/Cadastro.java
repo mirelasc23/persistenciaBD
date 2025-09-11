@@ -4,6 +4,9 @@ public class Cadastro {
     private int id;
     private String nome, cpf;
 
+    public Cadastro() {
+    }
+
     public Cadastro(int id, String nome, String cpf) {
         this.id = id;
         this.nome = nome;
