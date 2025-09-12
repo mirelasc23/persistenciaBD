@@ -18,5 +18,6 @@ public class Main {
         Cadastro cadastro = new Cadastro(id, nome, cpf);
         CadastroService.criar(cadastro);
         
+        System.out.println(cadastro);
     }
 }

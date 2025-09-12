@@ -8,13 +8,17 @@ import java.sql.ResultSet;
 
 public class ConnectionFactory {
     public static final String driver = "org.postgresql.Driver";
-    public static final String banco = "jdbc:postgresql://localhost:5432/hotel";
-    public static final String usuario = "root";
+    public static final String banco = "jdbc:postgresql://localhost:5432/hotel"; //jdbc:postgresql://localhost:5432/hotel?user=postgres&password=ifsc
+    public static final String usuario = "postgres";
     public static final String senha = "ifsc";
     
     public static Connection getConnection(){
         try {
             //Class.forName(driver);
+            //Class.forName("org.postgresql.Driver");
+            //Class.forName("org.postgresql.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/hotel?user=postgres&password=ifsc");
+
             return DriverManager.getConnection(banco, usuario, senha);
         } catch(SQLException ex){
             ex.printStackTrace();
