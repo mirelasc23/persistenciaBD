@@ -1,6 +1,7 @@
 package roberPSI;
 
 import roberPSI.entidades.Cadastro;
+import roberPSI.entidades.CadastroService;
 import roberPSI.util.Util;
 
 public class Main {
@@ -15,6 +16,7 @@ public class Main {
         String cpf = Util.lerString();
         
         Cadastro cadastro = new Cadastro(id, nome, cpf);
+        CadastroService.criar(cadastro);
         
     }
 }

@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class ConnectionFactoty {
+public class ConnectionFactory {
     public static final String driver = "org.postgresql.Driver";
     public static final String banco = "jdbc:postgresql://localhost:5432/hotel";
     public static final String usuario = "root";
@@ -14,15 +14,14 @@ public class ConnectionFactoty {
     
     public static Connection getConnection(){
         try {
-            return DriverManager.getConnection(banco + "?verifyServerCertificate=false"
-                    + "&useSSL=false"
-                    + "&requireSSL=false"
-                    + "&USER=" + usuario + "&password=" + senha + "&serverTimezone=UTC");
+            //Class.forName(driver);
+            return DriverManager.getConnection(banco, usuario, senha);
         } catch(SQLException ex){
             ex.printStackTrace();
             return null;
         }
     }
+    
     
     public static  void closeConnecition(Connection conexao){
         try {
