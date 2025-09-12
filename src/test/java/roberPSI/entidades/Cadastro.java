@@ -1,4 +1,4 @@
-package roberPSI.entidades.dao;
+package roberPSI.entidades;
 
 public class Cadastro {
     private int id;

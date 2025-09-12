@@ -1,6 +1,6 @@
 package roberPSI;
 
-import roberPSI.entidades.dao.Cadastro;
+import roberPSI.entidades.Cadastro;
 import roberPSI.util.Util;
 
 public class Main {
@@ -15,5 +15,6 @@ public class Main {
         String cpf = Util.lerString();
         
         Cadastro cadastro = new Cadastro(id, nome, cpf);
+        
     }
 }
